@@ -47,9 +47,9 @@ const UserTable = ({ onLogout }) => {
     axios
       .get("http://localhost:3000/users/get")
       .then((response) => {
-        console.log("Fetched Data:", response.data); // Log the response data
+        console.log("Fetched Data:", response.data); 
         if (Array.isArray(response.data.data)) {
-          setUsers(response.data.data); // Update the state with the fetched data
+          setUsers(response.data.data); 
         } else {
           console.error("Unexpected API response format:", response.data);
         }
@@ -252,11 +252,11 @@ const UserTable = ({ onLogout }) => {
 
       {/* Add User Dialog */}
       <Dialog open={openDialog} onClose={handleCloseDialog}>
-        <DialogTitle>Add New User</DialogTitle>
-        <DialogContent>
-          <TextField label="Full Name" fullWidth value={newUser.name} onChange={(e) => setNewUser({ ...newUser, name: e.target.value })} />
-          <TextField label="Address" fullWidth value={newUser.address} onChange={(e) => setNewUser({ ...newUser, address: e.target.value })} />
-          <TextField label="Phone Number" fullWidth value={newUser.phone} onChange={(e) => setNewUser({ ...newUser, phone: e.target.value })} />
+        <DialogTitle sx={{bgcolor:"rgb(25, 118, 210)", color:'white'}}>Add New User</DialogTitle>
+        <DialogContent >
+          <TextField label="Full Name" fullWidth value={newUser.name} onChange={(e) => setNewUser({ ...newUser, name: e.target.value })} sx={{marginBottom:'7px', marginTop:'35px'}} />
+          <TextField label="Address" fullWidth value={newUser.address} onChange={(e) => setNewUser({ ...newUser, address: e.target.value })} sx={{marginBottom:'7px', marginTop:'7px'}}/>
+          <TextField label="Phone Number" fullWidth value={newUser.phone} onChange={(e) => setNewUser({ ...newUser, phone: e.target.value })} sx={{marginBottom:'7px', marginTop:'7px'}}/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseDialog} color="secondary">Cancel</Button>
