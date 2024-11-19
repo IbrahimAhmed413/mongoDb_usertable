@@ -183,7 +183,7 @@ const UserTable = ({ onLogout }) => {
               </>
             )}
           </div>
-          <Button variant="contained" color="primary" onClick={handleOpenDialog} sx={{maxHeight:'50px'}}>Add User</Button>
+          <Button variant="contained" color="primary" onClick={handleOpenDialog} sx={{maxHeight:'50px',marginTop:'20px'}}>Add User</Button>
           <IconButton color="secondary" onClick={handleLogout}><LogoutIcon /></IconButton>
         </div>
 
